@@ -32,5 +32,17 @@ Note: git add can be used to both start tracking file and also update a modified
 
 Note: git add can be used to both start tracking file and also update a modified file to staging. Remember when you use git commit, only the version of the file in staging will be commited. 
 
+* How do you tell git to ignore some specific files 
+''$ cat .gitignore
+
+.[oa]
+
+~
+
+The first line tells Git to ignore file ending in .o or .a , the second line tells git to ignore files that end with a tilde ~
+
+
+
+
 
 
