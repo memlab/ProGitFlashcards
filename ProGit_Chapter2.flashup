@@ -42,7 +42,15 @@ Note: git add can be used to both start tracking file and also update a modified
 The first line tells Git to ignore file ending in .o or .a , the second line tells git to ignore files that end with a tilde ~
 
 
+* How do you view changes that are not yet staged
 
+''$ git diff''
+
+Note: This command will only show you changes that are still unstaged. If you've staged all of your changes , git diff will give you no output 
+
+* How do you view changes that you have staged , but not yet commited 
+
+''$git diff --cached''
 
 
 
