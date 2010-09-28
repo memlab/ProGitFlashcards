@@ -168,21 +168,26 @@ Note: This can be used when you commit too early and possibly forget to add some
 
 * How do you unmodify a modified file?
 `$ git checkout --fileName`
+
 Note: Realize that by using this command, any changes you made to your file are gone. You just copied another file over it. 
 
 * How do you see which remote servers you have configured?
 `$ git remote`
-Note: If you've cloned your repository, you should see origin. You can also specify '-v', which shows the URL that Git has stored. 
+
+Note: If you've cloned your repository, you should see origin. You can also specify `-v`, which shows the URL that Git has stored. 
 
 * How do you add a remote repository?
-'$ git remote add shortName git@github.com:memlab/ProGitFlashcards.git'
+`
+$ git remote add shortName git@github.com:memlab/ProGitFlashcards.git
+`
 Note: Now you can use shortName on the command line in lieu of the whole URL. 
 
 * How do you fetch from your remotes?
-`$ git fetch [remote-name]
+`$ git fetch [remote-name]`
 
 * How do you push to your remotes?
-'$ git push [remote-name] [branch-name]'
+`$ git push [remote-name] [branch-name]`
+
 Example: `git push origin master`
 
 * How do you see more information about a particular remote?
@@ -196,22 +201,51 @@ Example: `git push origin master`
 
 * How do you list the available tags in a Git workspace? 
 `$ git tag`
-Note: You can also search for tags with a particular patters using `$ git tag -l 'v1.4.2*'
+
+Note: You can also search for tags with a particular patters using `$ git tag -l 'v1.4.2*'`
 
 * How do you create a annotated tag?
-`$ git tag -a v1.4 -m 'Tagging Message'` If you run `git show` on the tag , you can see the GPG signature attached to it. 
+`$ git tag -a v1.4 -m 'Tagging Message'` 
+
+If you run `git show` on the tag , you can see the GPG signature attached to it. 
 
 * What is a lightweight tag?
 * How do you create one?
 
 A lightweight tag basically stores the commit checksum in a file. No other Information is kept
 
-`$ git tag v1.4-lw'
+`$ git tag v1.4-lw`
+
 Note: If you dont specify a message for an annotated tag, Git launches your editor so you can type it in. 
 
 * How do you create a signed tag? 
 `$ git tag -s v1.5 -m 'Your Tagging Message '`
+
 Note: This command signs your tag with GPG, assuming you have a private key. 
 
+* How do you verify a signed tag? 
+`$ git tag -v v1.4.2.1`
 
+Note: This command uses GPG to verify the signature. You need the signer's public key in your keying for this to work properly. 
+
+* You forgot to tag the project at v1.2, which was a few commits before. 
+*How do you create it now? 
+`git tag -a v1.2 [commit-checksum]`
+
+Example: `$ git tag -a v1.2 9fceb02`
+
+* How do you push a tag to the remote servers?
+`$ git push origin [tagname]`
+
+Example: `$ git push origin v1.5`
+
+* How do you create a git alias? 
+`$ git config --global alias.[aliasName] [command]`
+
+Example: 
+`
+$ git config --global alias.last 'log -1 HEAD'
+`
+
+Now when you run `$ git last`, you can see the last commit.  
 
