@@ -140,7 +140,7 @@ Note : The above command lists each commit with its SHA-1 checksum, the username
 
 * How do you limit your log output?
 `$ git log --since=2.weeks`
-Note: This command works with lots of formats you can specify a specific date (\u201c2008-01-15\u201d) or a relative date such as "2 years 1 day 3 minutes ago".
+Note: This command works with lots of formats you can specify a specific date (2008-01-15) or a relative date such as "2 years 1 day 3 minutes ago".
 		
 
 * List the `git log` filter options.
@@ -154,5 +154,35 @@ Note: This command works with lots of formats you can specify a specific date (\
 `--author`: Only show commits in which the author entry matches the specified string.
 
 `--committer`: Only show commits in which the committer entry matches the specified string.
+
+* How do you change your last commit?
+`$ git commit --amend`
+
+Note: This can be used when you commit too early and possibly forget to add some files. This command takes your staging area and uses it for commit. As an example, if you commit and realize you forgot to stage changes in a file you wanted to add to this commit you can do, 
+`$ git commit -m 'initial commit'`
+`$ git add forgotten_file`
+`$ git commit --amend`
+
+* How do you unstage a staged file?
+`$ git reset HEAD fileName`
+
+* How do you unmodify a modified file?
+`$ git checkout --fileName`
+Note: Realize that by using this command, any changes you made to your file are gone. You just copied another file over it. 
+
+* How do you see which remote servers you have configured?
+`$ git remote`
+Note: If you've cloned your repository, you should see origin. You can also specify '-v', which shows the URL that Git has stored. 
+
+* How do you add a remote repository?
+'$ git remote add shortName git@github.com:memlab/ProGitFlashcards.git'
+Note: Now you can use shortName on the command line in lieu of the whole URL. 
+
+* How do you fetch from your remotes?
+`$ git fetch [remote-name]
+
+* How do you push to your remotes?
+'$ git push [remote-name] [branch-name]'
+Example: `git push origin master`
 
 
