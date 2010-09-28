@@ -199,6 +199,19 @@ Example: `git push origin master`
 Note: You can also search for tags with a particular patters using `$ git tag -l 'v1.4.2*'
 
 * How do you create a annotated tag?
+`$ git tag -a v1.4 -m 'Tagging Message'` If you run `git show` on the tag , you can see the GPG signature attached to it. 
+
+* What is a lightweight tag?
+* How do you create one?
+
+A lightweight tag basically stores the commit checksum in a file. No other Information is kept
+
+`$ git tag v1.4-lw'
+Note: If you dont specify a message for an annotated tag, Git launches your editor so you can type it in. 
+
+* How do you create a signed tag? 
+`$ git tag -s v1.5 -m 'Your Tagging Message '`
+Note: This command signs your tag with GPG, assuming you have a private key. 
 
 
 
