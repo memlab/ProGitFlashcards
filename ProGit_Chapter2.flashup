@@ -1,34 +1,34 @@
 * How do you initialize a repository in a directory 
-``$ git init`` 
+`$ git init`
 This creates a new subdirectory named .git that contains all your necessary repository files - A Git Repository skeleton
 
 * What are the 2 basic steps to start version controlling existing files
 
-''' ADD and COMMIT''' 
+`ADD and COMMIT`
 
-''$ got add *.c'' 
+`$ got add *.c`
 
-''$ git commit -m 'initial project version'
+`$ git commit -m 'initial project version'`
 
 * How do you clone an existing repository 
 
-''$ git clone git@github.com:memlab/ProGitFlashCards.git''
+`$ git clone git@github.com:memlab/ProGitFlashCards.git`
 
 This creates a directory named ProGitFlashCards, initializes a .git directory inside it, pulls down all the data for that repository and checks out a working cop of the latest version 
 
 * How do you check the status of your files 
 
-''$ git status''
+`$ git status`
 
 * How do you start tracking a new file 
 
-''$ git add newFile''
+`$ git add newFile`
 
 Note: git add can be used to both start tracking file and also update a modified file to staging. Remember when you use git commit, only the version of the file in staging will be commited.
 
 * How do you update Modified files to staging 
 
-''$ git add modifiedFile''
+`$ git add modifiedFile`
 
 Note: git add can be used to both start tracking file and also update a modified file to staging. Remember when you use git commit, only the version of the file in staging will be commited. 
 
@@ -44,13 +44,33 @@ The first line tells Git to ignore file ending in .o or .a , the second line tel
 
 * How do you view changes that are not yet staged
 
-''$ git diff''
+`$ git diff`
 
 Note: This command will only show you changes that are still unstaged. If you've staged all of your changes , git diff will give you no output 
 
 * How do you view changes that you have staged , but not yet commited 
 
-''$git diff --cached''
+`$git diff --cached`
+
+* How do you commit your changes 
+
+`$ git commit`
+This launches the editor of your choice so that you can type your commit message 
+
+Also, `$ git commit -m "Your Commit Message"`
+can be used to commit your changes by typing your message inline 
+
+* Can you skip the staging area. If yes,  How ?
+`$ git commit -a -m 'Your Commit Message'`
+
+* How do you remove a tracked file ? 
+`$ git rm fileName`
+Note: The next time you commit , the file will be gone and no longer tracked.
+
+* How do you keep a file in your working tree but remove it from your staging area 
+`$ git rm --cached fileName`
+Note: This is particularly useful if you forgot to add something to your .gitignore file and accidentally added it, like a large log of compiled .a files.
+		
 
 
 
