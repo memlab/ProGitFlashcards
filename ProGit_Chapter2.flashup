@@ -185,4 +185,20 @@ Note: Now you can use shortName on the command line in lieu of the whole URL.
 '$ git push [remote-name] [branch-name]'
 Example: `git push origin master`
 
+* How do you see more information about a particular remote?
+`$ git remote show [remote-name]`
+
+* How do you rename a remote? 
+`$ git remote rename oldName newName`
+
+* How do you remove a remote?
+`$ git remote rm remoteName`
+
+* How do you list the available tags in a Git workspace? 
+`$ git tag`
+Note: You can also search for tags with a particular patters using `$ git tag -l 'v1.4.2*'
+
+* How do you create a annotated tag?
+
+
 
